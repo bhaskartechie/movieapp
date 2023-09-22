@@ -7,8 +7,36 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">Movies</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#">News</a>
+            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="#">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="container">
       <h1>Welcome to Home Page, {{Name}}</h1>
       <h2>This is the full home page</h2>
@@ -24,10 +52,7 @@
         {% for movie in movies %}
         <div v-for="movie in movies" class="col">
           <div class="card">
-            <img
-              class="card-img-top"
-              src="{{movie.image.url }}"
-            />
+            <img class="card-img-top" src="{{movie.image.url }}" />
             <div class="card-body">
               <h5 class="card-title fw-bold">{{ movie.title }}</h5>
               <p class="card-text">{{ movie.description }}</p>
