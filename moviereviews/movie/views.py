@@ -30,8 +30,9 @@ def detail(request, movie_id):
 
 def createreview(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
+    reviews = Review.objects.filter(movie=movie)
     if request.method == 'GET':
-        return render(request, 'createreview.html', {'form': ReviewForm(), 'movie': movie})
+        return render(request, 'createreview.html', {'form': ReviewForm(), 'movie': movie, 'reviews':reviews})
     else:
         try:
             form = ReviewForm(request.POST)

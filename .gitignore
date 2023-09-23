@@ -2,3 +2,4 @@ Django 4 for the Impatient. .pdf
 env 
 __pycache__
 *.pyc
+moviereviews\db.sqlite3
